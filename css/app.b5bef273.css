@@ -1,0 +1,400 @@
+
+.regionSelect {
+  margin-top: 30px;
+  width: 200px;
+  margin-right:10px;
+}
+.credentialSelect {
+  margin-top: 30px;
+  width: 200px;
+  margin-right:10px;
+}
+
+
+.theme--dark.menuBlock > .v-input__control > .v-input__slot {
+  background: white !important;
+}
+.theme--dark.menuBlock input {
+  color: black !important;
+}
+.menuBlock {
+  margin-top:5px !important;
+  margin-bottom:5px !important;
+}
+.menuBlock > .v-input__control > .v-input__slot > .v-text-field__slot > input {
+  cursor: -webkit-grab; 
+  cursor: grab;
+}
+.list-group {
+  width:100%;
+  height: 100%;
+}
+.reset_btn {
+  width: 100%;
+}
+
+
+.aboutCol {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  margin-top:25px
+}
+.aboutIcon {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  text-align: center
+}
+.aboutInfo {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+  text-align: center;
+}
+.aboutInfoContainer{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+      -ms-flex-direction: column; 
+          flex-direction: column;
+}
+.aboutInfoTitle {
+  text-align:left;
+}
+.aboutInfoDescription{
+  text-align:left;
+}
+.aboutCard {
+  font-size: 1rem !important;
+}
+.theme--dark.v-card > .aboutCard > .aboutRow > .aboutCol > .aboutInfo > .aboutInfoContainer > .aboutInfoTitle {
+  color:white !important;
+}
+.theme--dark.v-card > .aboutCard > .aboutRow > .aboutCol > .aboutInfo > .aboutInfoContainer > .aboutInfoLink a {
+  color:#ffffffb3 !important;
+}
+.theme--light.v-card > .aboutCard > .aboutRow > .aboutCol > .aboutInfo > .aboutInfoContainer > .aboutInfoLink a {
+  color:#00000099 !important;
+}
+
+
+.tabTable {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.footerBtn {
+  -ms-flex-preferred-size: 33% !important;
+      flex-basis: 33% !important;
+}
+.pageCount {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.eventTable  table {
+   table-layout:fixed;
+}
+.eventTable  table th:nth-child(1){ 
+   width: 220px;
+}
+.eventTable  table th:nth-child(2){ 
+   width: 200px;
+}
+.eventTable table th:nth-child(3){
+   width: 300px;
+}
+.eventTable table th:nth-child(4){
+   width: auto;
+}
+
+/**
+ * Copyright (c) 2014 The xterm.js authors. All rights reserved.
+ * Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
+ * https://github.com/chjj/term.js
+ * @license MIT
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * Originally forked from (with the author's permission):
+ *   Fabrice Bellard's javascript vt100 for jslinux:
+ *   http://bellard.org/jslinux/
+ *   Copyright (c) 2011 Fabrice Bellard
+ *   The original design remains. The terminal itself
+ *   has been extended to include xterm CSI codes, among
+ *   other features.
+ */
+
+/**
+ *  Default styles for xterm.js
+ */
+body {
+  background-color: #000000;
+}
+.xterm {
+    -webkit-font-feature-settings: "liga" 0;
+            font-feature-settings: "liga" 0;
+    position: relative;
+    -moz-user-select: none;
+         user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+.xterm.focus,
+.xterm:focus {
+    outline: none;
+}
+.xterm .xterm-helpers {
+    position: absolute;
+    top: 0;
+    /**
+     * The z-index of the helpers must be higher than the canvases in order for
+     * IMEs to appear on top.
+     */
+    z-index: 5;
+}
+.xterm .xterm-helper-textarea {
+    /*
+     * HACK: to fix IE's blinking cursor
+     * Move textarea out of the screen to the far left, so that the cursor is not visible.
+     */
+    position: absolute;
+    opacity: 0;
+    left: -9999em;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -5;
+    /** Prevent wrapping so the IME appears against the textarea at the correct position */
+    white-space: nowrap;
+    overflow: hidden;
+    resize: none;
+}
+.xterm .composition-view {
+    /* TODO: Composition position got messed up somewhere */
+    background: #000;
+    color: #FFF;
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+}
+.xterm .composition-view.active {
+    display: block;
+}
+.xterm .xterm-viewport {
+    /* On OS X this is required in order for the scroll bar to appear fully opaque */
+    background-color: #000;
+    overflow-y: scroll;
+    cursor: default;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.xterm .xterm-screen {
+    position: relative;
+}
+.xterm .xterm-screen canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.xterm .xterm-scroll-area {
+    visibility: hidden;
+}
+.xterm-char-measure-element {
+    display: inline-block;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: -9999em;
+    line-height: normal;
+}
+.xterm {
+    cursor: text;
+}
+.xterm.enable-mouse-events {
+    /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
+    cursor: default;
+}
+.xterm.xterm-cursor-pointer {
+    cursor: pointer;
+}
+.xterm.column-select.focus {
+    /* Column selection mode */
+    cursor: crosshair;
+}
+.xterm .xterm-accessibility,
+.xterm .xterm-message {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    color: transparent;
+}
+.xterm .live-region {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.xterm-dim {
+    opacity: 0.5;
+}
+.xterm-underline {
+    text-decoration: underline;
+}
+
+
+.shell {
+  margin:25px !important;
+}
+.colorField .v-input__append-inner{
+  margin-top: 15px;
+}
+
+
+.colorField .v-input__append-inner{
+  margin-top: 15px;
+}
+
+
+.start-session-btn {
+  width: 200px !important;
+}
+
+
+.download_btn {
+    width: 100%;
+}
+
+
+.tabTable {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.createRecordSetBtn {
+  width: 175px !important;
+}
+
+
+.logContainer {
+    background-color: #24292e;
+    border: 1px solid white;
+    overflow-x: auto;
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+}
+.log {
+    overflow: auto;
+    overflow-y: hidden;
+    width:auto;
+    text-overflow: clip;
+}
+.timestamp {
+    width: 200px;
+}
+.logContainer tbody {
+    display: block;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.logRow {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.v-date-picker-table table th,
+td {
+    width: auto;
+}
+.theme--light.v-application  table.logContainer {
+  color: white;
+}
+
+
+.tabTable {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+
+.tabTable {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+
+.v-list-item__title {
+  font-size: 1.0em !important;
+}
+th,
+td {
+  width: 100px;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.actions {
+  position: absolute;
+  right: 10px;
+}
+.action-btn {
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size:0.9em !important;
+}
+.actionBlock {
+  margin-top: 10px;
+  margin-bottom :10px;
+}
+.v-data-footer__select {
+  display: none !important;
+}
+html{
+  overflow-y: auto !important;
+}
+.title {
+  margin-left:20px;
+}
+.titleLink {
+  text-decoration: none;
+  color: inherit !important;
+}
+.v-content__wrap .container {
+  padding-bottom: 0;
+}
+
