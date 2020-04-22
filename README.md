@@ -1,6 +1,6 @@
 # AWS Admin Dashboard
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE.md)
+![build](https://github.com/bertrandmartel/aws-admin/workflows/build/badge.svg) [![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE.md)
 
 An admin Dashboard for AWS using the AWS API under the hood
 
