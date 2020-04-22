@@ -168,12 +168,8 @@ func routes(e *echo.Echo, cfg *model.Config) {
 				URL: devURL,
 			},
 		}
-		e.Group("/", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
 		e.Group("/js/app.js", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)), MWSession)
-		e.Group("/js/*", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
-		e.Group("/fonts/*", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
-		e.Group("/vendor/*", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
-		e.Group("/img", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
+		e.Group("/*", middleware.Proxy(middleware.NewRoundRobinBalancer(targets)))
 	} else {
 		e.Group("/js/app.js", middleware.StaticWithConfig(middleware.StaticConfig{
 			Root:   "dist",
