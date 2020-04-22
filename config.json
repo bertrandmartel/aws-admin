@@ -1,0 +1,9 @@
+{
+    "version": "0.1",
+    "port": 6004,
+    "serverPath": "http://localhost",
+    "defaultRegion": "eu-west-3",
+    "credentials": {
+        "credentialType": 0
+    }
+}
