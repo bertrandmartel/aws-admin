@@ -215,7 +215,7 @@ const actions = {
     },
     (response) => {
       if (response.data.updated){
-        document.location.href = "/";
+        document.location.href = window.location.href;
       }
       commit('updateLoaded', true)
     },

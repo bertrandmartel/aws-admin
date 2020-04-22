@@ -4,5 +4,6 @@ module.exports = {
   ],
   css: {
     extract: true
-  }
+  },
+  publicPath: process.env.VUE_APP_BASE_ROUTE || '/'
 }

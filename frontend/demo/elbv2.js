@@ -148,7 +148,7 @@ export default {
           "Port": 80,
           "Protocol": "HTTP",
           "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-west-3:123456789012:targetgroup/DefaultTargetGroup/12345fd69b586b",
-          "TargetGroupName": "DefaultMaoStackTargetGroup",
+          "TargetGroupName": "DefaultStackTargetGroup",
           "TargetType": "instance",
           "UnhealthyThresholdCount": 2,
           "VpcId": "vpc-0ff123456677887da"
