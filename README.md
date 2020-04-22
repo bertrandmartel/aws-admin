@@ -13,11 +13,15 @@ An admin Dashboard for AWS using the AWS API under the hood
 * UI has no external dependencies (can be run locally on your private network)
 * it has a dark mode :sunglasses:
 
+###  [Live demo Here](https://bertrandmartel.github.io/aws-admin)
+
+[![screen](https://user-images.githubusercontent.com/5183022/79948115-8672d700-8473-11ea-9959-0a3e5d09e94c.png)](https://bertrandmartel.github.io/aws-admin)
+
 ## Install
 
 #### Using binaries (recommended)
 
-Download the latest release
+[Download the latest release](https://github.com/bertrandmartel/aws-admin/releases/latest)
 
 go to http://localhost:6004
 
