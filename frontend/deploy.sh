@@ -2,6 +2,8 @@
 
 set -e
 
+rm -rf ./dist
+
 export NODE_ENV=github
 mkdir -p api
 mv ./src/api/* ./api/
@@ -18,4 +20,4 @@ git commit -m 'deploy'
 git push -f git@github.com:bertrandmartel/aws-admin.git master:gh-pages
 
 cp ./api/* ./src/api/
-rm -rf api
+rm -rf ./api
