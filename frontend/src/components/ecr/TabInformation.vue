@@ -42,7 +42,7 @@
         <code style='color: black; padding-top: 12px;padding-bottom:12px;white-space: nowrap;display: block;overflow-y: hidden;'>docker build -t {{selectedRepository.RepositoryName}} .</code>
       </v-col>
       <v-col cols="12" style='margin-top:15px'>
-        <code style='color: black; padding-top: 12px;padding-bottom:12px;white-space: nowrap;display: block;overflow-y: hidden;'>docker tag test:latest {{selectedRepository.RepositoryUri}}:latest</code>
+        <code style='color: black; padding-top: 12px;padding-bottom:12px;white-space: nowrap;display: block;overflow-y: hidden;'>docker tag {{selectedRepository.RepositoryName}}:latest {{selectedRepository.RepositoryUri}}:latest</code>
       </v-col>
       <v-col cols="12" style='margin-top:15px'>
         <code style='color: black; padding-top: 12px;padding-bottom:12px;white-space: nowrap;display: block;overflow-y: hidden;'>docker push {{selectedRepository.RepositoryUri}}:latest</code>
