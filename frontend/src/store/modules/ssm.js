@@ -47,7 +47,7 @@ const state = {
     {
       text: 'InstanceId',
       value: 'InstanceId',
-      filterable: false
+      filterable: true
     },
     {
       text: 'ComputerName',
