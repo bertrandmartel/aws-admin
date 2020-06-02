@@ -237,10 +237,12 @@ const actions = {
       socket.addEventListener('message', (event) => {
         var agentMessage = ssm.decode(event.data);
         //console.log(agentMessage);
+        ssm.sendACK(socket, agentMessage);
         if (agentMessage.payloadType === 1){
-          ssm.sendACK(socket, agentMessage);
           terminal.write(agentMessage.payload)
-        } 
+        } else if (agentMessage.payloadType === 17){
+          ssm.sendInitMessage(socket, state.termOptions);
+        }
       });
       //commit('updateSocket', socket)
     },
